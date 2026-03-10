@@ -28,6 +28,50 @@ digraph mode_detection {
 
 **Ambiguous:** Ask — "Initial index found. Re-index from scratch, or update from recent changes?"
 
+## Session Discipline: Docs First, Code Second
+
+⚠️ **The entire point of this skill is to generate `docs/` files that you READ every session instead of re-scanning the codebase.**
+
+### In Every Project Using Codebase Indexer
+
+1. **Session Start**
+   - Read `docs/architecture.md` and `docs/implementation.md` first
+   - These files contain the project map — do not re-scan the codebase from scratch
+
+2. **Red Flags — Don't Do These**
+   - ❌ Use Glob/Grep to explore or understand project structure
+   - ❌ Run broad file searches to learn how things work
+   - ❌ Search the codebase when a doc exists that explains it
+   - ❌ Use codebase-indexer skill unless maintaining docs after changes
+
+3. **Do This Instead**
+   - ✓ Check the docs first before jumping into code exploration
+   - ✓ Use targeted Glob/Grep ONLY to find specific files (e.g., you know the filename pattern)
+   - ✓ Update docs after every feature/bugfix so future sessions can use them
+   - ✓ Ask "Is this in the docs already?" before searching
+
+### Template for CLAUDE.md
+
+Add this section to every project's CLAUDE.md:
+
+```markdown
+### ⚠️ Red Flags — Don't Do These
+
+Before searching the codebase, ask: **"Is this information in the docs already?"**
+
+DON'T:
+- Use Glob/Grep to explore or understand project structure
+- Run broad file searches to learn how things work
+- Search the codebase when a doc exists that explains it
+- Use codebase-indexer skill unless maintaining docs after changes
+
+DO:
+- Start every session reading `docs/architecture.md` and `docs/implementation.md`
+- Use targeted Glob/Grep ONLY to find specific files (e.g., you know the filename pattern)
+- Check the docs first before jumping into code exploration
+- Update docs after every feature/bugfix so future sessions can use them
+```
+
 ## Execution
 
 | Mode | Read this guide |
