@@ -31,6 +31,10 @@ DO:
 - Check the docs first before jumping into code exploration
 - Update docs after every feature/bugfix so future sessions can use them
 
+### Subagents
+Subagents spawned via the Agent tool (Explore, Plan, general-purpose) do NOT inherit CLAUDE.md — they start blank. When writing any subagent prompt, include this line at the top:
+> "This project has indexed docs. Read `docs/architecture.md` and `docs/implementation.md` first — they are the project map. Do not explore source files for information already covered there."
+
 ### After Every Feature or Bugfix
 1. Run `git diff HEAD~1 --name-only` to identify changed files.
 2. Re-scan only the changed files and their direct neighbors (same package/directory).
